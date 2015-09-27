@@ -19,7 +19,7 @@ public class TwitterApplication {
     }
   
     private void publish(){
-       String message="Coucou";
+       String message="Twitter application using Java http://www.java-tutorial.ch/architecture/twitter-with-java-tutorial";
        try {
            Twitter twitter = new TwitterFactory().getInstance();
            try {

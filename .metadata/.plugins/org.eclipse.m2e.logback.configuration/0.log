@@ -790,3 +790,44 @@
 2015-09-27 15:59:19,411 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
 2015-09-27 15:59:19,412 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-09-27 15:59:19,413 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 16:01:12,000 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:01:12,001 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 16:01:12,002 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:01:12,004 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 16:04:39,008 [Worker-52] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3-sources.jar
+2015-09-27 16:04:42,182 [Worker-52] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3-sources.jar
+2015-09-27 16:04:42,253 [Worker-52] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.twitter4j:twitter4j-core:4.0.3
+2015-09-27 16:04:42,451 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:04:42,452 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 16:04:42,453 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:04:42,454 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 16:05:21,040 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom
+2015-09-27 16:05:21,215 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.pom
+2015-09-27 16:05:21,348 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+2015-09-27 16:05:21,539 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+2015-09-27 16:05:21,620 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+2015-09-27 16:05:21,812 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+2015-09-27 16:05:21,907 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/com/googlecode/kryo/1.04/kryo-1.04.pom
+2015-09-27 16:05:22,245 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/googlecode/kryo/1.04/kryo-1.04.pom
+2015-09-27 16:05:22,342 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom
+2015-09-27 16:05:22,505 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/asm/asm/3.2/asm-3.2.pom
+2015-09-27 16:05:22,596 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom
+2015-09-27 16:05:22,771 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/asm/asm-parent/3.2/asm-parent-3.2.pom
+2015-09-27 16:05:22,886 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/com/googlecode/reflectasm/1.01/reflectasm-1.01.pom
+2015-09-27 16:05:23,067 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/googlecode/reflectasm/1.01/reflectasm-1.01.pom
+2015-09-27 16:05:23,161 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/com/googlecode/minlog/1.2/minlog-1.2.pom
+2015-09-27 16:05:23,328 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/googlecode/minlog/1.2/minlog-1.2.pom
+2015-09-27 16:05:23,416 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom
+2015-09-27 16:05:23,609 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom
+2015-09-27 16:05:23,701 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom
+2015-09-27 16:05:23,895 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.2/slf4j-parent-1.7.2.pom
+2015-09-27 16:05:23,975 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.pom
+2015-09-27 16:05:24,315 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/log4j/log4j/1.2.17/log4j-1.2.17.pom
+2015-09-27 16:07:17,244 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:07:17,244 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 16:07:17,246 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:07:17,246 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 16:07:22,868 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:07:22,869 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 16:07:22,874 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 16:07:22,875 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
