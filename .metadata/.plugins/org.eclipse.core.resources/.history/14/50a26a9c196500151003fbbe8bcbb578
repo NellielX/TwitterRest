@@ -1,0 +1,5 @@
+package com.twitterrest.client;
+
+public class TwitterRestClient {
+
+}
