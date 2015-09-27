@@ -585,3 +585,82 @@
 2015-09-27 15:00:27,924 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
 2015-09-27 15:00:27,926 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-09-27 15:00:27,926 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:00,876 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:06:01,245 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/maven-metadata.xml
+2015-09-27 15:06:01,424 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/maven-metadata.xml
+2015-09-27 15:06:01,628 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.0/twitter4j-core-4.0.0.pom
+2015-09-27 15:06:01,965 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.0/twitter4j-core-4.0.0.pom
+2015-09-27 15:06:02,146 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom
+2015-09-27 15:06:02,332 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.pom
+2015-09-27 15:06:02,416 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.2/twitter4j-core-4.0.2.pom
+2015-09-27 15:06:02,725 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.2/twitter4j-core-4.0.2.pom
+2015-09-27 15:06:02,875 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3.pom
+2015-09-27 15:06:03,192 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3.pom
+2015-09-27 15:06:03,331 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3.jar
+2015-09-27 15:06:07,019 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0.3/twitter4j-core-4.0.3.jar
+2015-09-27 15:06:07,223 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:07,223 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:07,225 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:07,226 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:07,226 [Worker-14] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:06:07,226 [Worker-14] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:06:07,231 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:08,462 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:08,463 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:08,464 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:08,464 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:20,765 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:06:20,985 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:20,986 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:20,988 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:20,989 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:20,990 [Worker-37] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:06:20,990 [Worker-37] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:06:20,995 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:41,938 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:06:42,026 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0/twitter4j-core-4.0.pom
+2015-09-27 15:06:42,027 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.twitter4j:twitter4j-core:jar:4.0 is missing, no dependency information available
+2015-09-27 15:06:42,029 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.twitter4j:twitter4j-core:jar:4.0 is missing, no dependency information available
+2015-09-27 15:06:42,797 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/twitter4j/twitter4j-core/4.0/twitter4j-core-4.0.jar
+2015-09-27 15:06:42,890 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.twitter4j:twitter4j-core:jar:4.0 is missing, no dependency information available
+2015-09-27 15:06:42,978 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:42,979 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:42,980 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:42,980 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:42,981 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:06:42,981 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:06:42,985 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:57,466 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:06:57,735 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:57,736 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:57,737 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:57,738 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:06:57,738 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:06:57,738 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:06:57,741 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:58,988 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:58,989 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:06:58,991 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:06:58,992 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:07:02,629 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:07:02,664 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.twitter4j:twitter4j-core:jar:4.0 is missing, no dependency information available
+2015-09-27 15:07:02,711 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.twitter4j:twitter4j-core:jar:4.0 is missing, no dependency information available
+2015-09-27 15:07:02,821 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:02,832 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:07:02,834 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:02,834 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:07:02,835 [Worker-17] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:07:02,835 [Worker-17] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:07:02,838 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:05,077 [Worker-36] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TwitterRest:TwitterRest:0.0.1-SNAPSHOT @ C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\pom.xml.
+2015-09-27 15:07:05,276 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:05,277 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:07:05,278 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:05,278 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
+2015-09-27 15:07:05,279 [Worker-36] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TwitterRest
+2015-09-27 15:07:05,279 [Worker-36] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TwitterRest
+2015-09-27 15:07:05,282 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:06,534 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:06,535 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\main\resources
+2015-09-27 15:07:06,536 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-09-27 15:07:06,536 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Gaetan\Desktop\TwitterRest\TwitterRest\src\test\resources
