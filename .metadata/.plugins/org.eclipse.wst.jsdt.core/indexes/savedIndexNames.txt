@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Gaetan\Desktop\TwitterRest\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3674841850.index
+1203775668.index
+4117277032.index
+3808813693.index
+2488407026.index
+4192387516.index
