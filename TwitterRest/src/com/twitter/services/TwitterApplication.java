@@ -72,7 +72,7 @@ public class TwitterApplication {
    
     /**
      * Récupère la timeline de l'utilisateur twitter.
-     * @return statuses , la liste des status du compte.
+     * @return statuses , la liste des status du compte. 
      * @throws TwitterException gestion de l'exeption par twitter
      */
     public List<Status> getUserTimeline() throws TwitterException{
