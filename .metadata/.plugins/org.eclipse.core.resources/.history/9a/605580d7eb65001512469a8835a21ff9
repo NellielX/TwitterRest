@@ -14,20 +14,12 @@ public class TwitterApplication {
 	
     private final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
 
-    public static void main(String[] args) throws TwitterException {
-        new TwitterApplication().publish("Pouet les keupins 2");
-        
-        List<Status> test = new TwitterApplication().getUserTimeline();
-        
-        for (Status status : test) {
-        	System.out.println(status.getUser().getProfileImageURL());
-            System.out.println(status.getUser().getName() + ":" +
-                               status.getText());
-        }
+    public static void main(String[] args) {
+        new TwitterApplication().publish("Bouh");
     }
 
     /**
-     * MÃ©thode de connexion au compte Twitter 
+     * Méthode de connexion au compte Twitter 
      * @return twitter Objet Twitter.
      * @throws TwitterException Gestion d'exeption par Twitter.
      */
@@ -63,7 +55,7 @@ public class TwitterApplication {
     
     
     /**
-     * MÃ©thode de publication des messages sur Twitter.
+     * Méthode de publication des messages sur Twitter.
      * @param message message a envoyer.
      */
     private void publish(String message){
@@ -79,7 +71,7 @@ public class TwitterApplication {
     }
    
     /**
-     * RÃ©cupÃ¨re la timeline de l'utilisateur twitter.
+     * Récupère la timeline de l'utilisateur twitter.
      * @return statuses , la liste des status du compte. 
      * @throws TwitterException gestion de l'exeption par twitter
      */
