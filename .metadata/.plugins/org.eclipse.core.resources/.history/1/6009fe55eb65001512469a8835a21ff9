@@ -19,7 +19,7 @@ public class TwitterApplication {
     }
 
     /**
-     * Méthode de connexion au compte Twitter 
+     * MÃ©thode de connexion au compte Twitter 
      * @return twitter Objet Twitter.
      * @throws TwitterException Gestion d'exeption par Twitter.
      */
@@ -55,7 +55,7 @@ public class TwitterApplication {
     
     
     /**
-     * Méthode de publication des messages sur Twitter.
+     * MÃ©thode de publication des messages sur Twitter.
      * @param message message a envoyer.
      */
     private void publish(String message){
@@ -71,7 +71,7 @@ public class TwitterApplication {
     }
    
     /**
-     * Récupère la timeline de l'utilisateur twitter.
+     * RÃ©cupÃ¨re la timeline de l'utilisateur twitter.
      * @return statuses , la liste des status du compte. 
      * @throws TwitterException gestion de l'exeption par twitter
      */
