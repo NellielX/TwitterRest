@@ -12,7 +12,8 @@ import javax.swing.ListCellRenderer;
 
 import com.twitter.model.TwitterTimeLine;
 
-public class TimelineCellRenderer extends JLabel implements ListCellRenderer {
+public class TimelineCellRenderer extends JLabel implements
+		ListCellRenderer<TwitterTimeLine> {
 
 	private static final long serialVersionUID = -1536474351846893496L;
 	private static final Color HIGHLIGHT_COLOR = new Color(0, 0, 128);
@@ -23,11 +24,11 @@ public class TimelineCellRenderer extends JLabel implements ListCellRenderer {
 	}
 
 	@Override
-	public Component getListCellRendererComponent(JList list, Object value,
+	public Component getListCellRendererComponent(
+			JList<? extends TwitterTimeLine> list, TwitterTimeLine value,
 			int index, boolean isSelected, boolean cellHasFocus) {
 		TwitterTimeLine entry = (TwitterTimeLine) value;
 		setText(entry.getStatus());
-		// -- -- -- -- -- -- -- -- -- -- -- -- --
 		URL url = null;
 		try {
 			url = new URL(entry.getProfileImage());
