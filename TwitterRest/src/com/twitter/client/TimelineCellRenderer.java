@@ -27,15 +27,14 @@ public class TimelineCellRenderer extends JLabel implements
 	public Component getListCellRendererComponent(
 			JList<? extends TwitterTimeLine> list, TwitterTimeLine value,
 			int index, boolean isSelected, boolean cellHasFocus) {
-		TwitterTimeLine entry = (TwitterTimeLine) value;
-		setText(entry.getStatus());
+		setText(value.getStatus());
 		URL url = null;
 		try {
-			url = new URL(entry.getProfileImage());
+			url = new URL(value.getProfileImage());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		ImageIcon icon = new ImageIcon(url, entry.getPseudo());
+		ImageIcon icon = new ImageIcon(url, value.getPseudo());
 
 		setIcon(icon);
 		if (isSelected) {
