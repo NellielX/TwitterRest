@@ -1,16 +1,12 @@
 package com.twitter.client;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
 
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-
 public class TwitterFrame extends Frame {
-	
+
 	private static final long serialVersionUID = -7470915094971302312L;
 
 	public TwitterFrame() {
@@ -36,15 +32,12 @@ public class TwitterFrame extends Frame {
 	}
 
 	private void initTwitterPanels() {
-		JPanel textPanel = new JPanel();
-		textPanel.setBackground(Color.green);
-		JTextArea txtAreaList = new JTextArea();
 
-		textPanel.add(txtAreaList);
+		TwitterListPanel tlp = new TwitterListPanel(this);
 
 		TwitterStatusPanel tsp = new TwitterStatusPanel(this);
 
-		add(textPanel, BorderLayout.NORTH);
+		add(tlp, BorderLayout.NORTH);
 		add(tsp, BorderLayout.SOUTH);
 
 	}

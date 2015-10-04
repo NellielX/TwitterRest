@@ -1,4 +1,4 @@
-package com.twitter.client;
+package com.twitter.model;
 
 public class TwitterTimeLine {
 
