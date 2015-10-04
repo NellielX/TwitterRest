@@ -21,7 +21,7 @@ public class TwitterFrame extends Frame {
 	private void guiFactory() {
 		setTitle("Twitter W");
 
-		setResizable(false);
+		setResizable(true);
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension d = tk.getScreenSize();

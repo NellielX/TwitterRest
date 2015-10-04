@@ -1,10 +1,12 @@
 package com.twitter.client;
 
+import java.awt.BorderLayout;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import twitter4j.Status;
 import twitter4j.TwitterException;
@@ -43,9 +45,16 @@ public class TwitterListPanel extends JPanel {
 		}
 		System.out.println("Size of status list : " + listModel.size());
 		// -- -- -- -- -- -- -- -- -- -- -- -- --
-
+		// Old
+		// listTimeline = new JList<TwitterTimeLine>(listModel);
+		// add(listTimeline);
+		// New test
 		listTimeline = new JList<TwitterTimeLine>(listModel);
-		add(listTimeline);
+		listTimeline.setCellRenderer(new TimelineCellRenderer());
+		listTimeline.setVisibleRowCount(4);
+		JScrollPane pane = new JScrollPane(listTimeline);
+		add(pane, BorderLayout.EAST);
+		add(listTimeline,BorderLayout.WEST);
 	}
 
 }
