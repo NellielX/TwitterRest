@@ -1,7 +1,9 @@
 package com.twitter.client;
 
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,11 +31,16 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 		lbUser.setMinimumSize(new Dimension(300, 300));
 		txtStatus.setMinimumSize(new Dimension(600, 300));
 		btnUpdate.setMinimumSize(new Dimension(200, 300));
-		btnUpdate.setMaximumSize(new Dimension(200, 300));
 
-		add(lbUser);
-		add(txtStatus);
-		add(btnUpdate);
+		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
+						10, 0, 0), 0, 0));
+		add(txtStatus, new GridBagConstraints(2, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL,
+				new Insets(0, 10, 0, 10), 0, 0));
+		add(btnUpdate, new GridBagConstraints(3, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
+						0, 0, 10), 0, 0));
 
 	}
 
