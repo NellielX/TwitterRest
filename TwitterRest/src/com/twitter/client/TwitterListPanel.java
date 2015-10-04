@@ -1,6 +1,6 @@
 package com.twitter.client;
 
-import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -45,16 +45,13 @@ public class TwitterListPanel extends JPanel {
 		}
 		System.out.println("Size of status list : " + listModel.size());
 		// -- -- -- -- -- -- -- -- -- -- -- -- --
-		// Old
-		// listTimeline = new JList<TwitterTimeLine>(listModel);
-		// add(listTimeline);
-		// New test
+		
 		listTimeline = new JList<TwitterTimeLine>(listModel);
 		listTimeline.setCellRenderer(new TimelineCellRenderer());
-		listTimeline.setVisibleRowCount(4);
+		listTimeline.setVisibleRowCount(9);
+		listTimeline.setPreferredSize(new Dimension(500, 500));
 		JScrollPane pane = new JScrollPane(listTimeline);
-		add(pane, BorderLayout.EAST);
-		add(listTimeline,BorderLayout.WEST);
+		add(pane);
 	}
 
 }
