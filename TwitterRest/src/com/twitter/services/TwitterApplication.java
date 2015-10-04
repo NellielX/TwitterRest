@@ -15,7 +15,7 @@ public class TwitterApplication {
     private final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
 
     public static void main(String[] args) throws TwitterException {
-        new TwitterApplication().publish("Pouet les keupins 2");
+        new TwitterApplication().publish("koko");
         
         List<Status> test = new TwitterApplication().getUserTimeline();
         
