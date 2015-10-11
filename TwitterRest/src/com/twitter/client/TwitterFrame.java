@@ -10,6 +10,7 @@ public class TwitterFrame extends Frame {
 	private static final long serialVersionUID = -7470915094971302312L;
 	private TwitterListPanel tlp;
 	private TwitterStatusPanel tsp;
+	private TwitterListFriends tlf;
 
 	public TwitterFrame() {
 		guiFactory();
@@ -27,16 +28,18 @@ public class TwitterFrame extends Frame {
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension d = tk.getScreenSize();
-		setSize(500, d.height / 2);
+		setSize(1300, d.height / 2);
 		initTwitterPanels();
 		setLocationRelativeTo(null);
 
 	}
 
 	private void initTwitterPanels() {
+		tlf = new TwitterListFriends(this);
 		tlp = new TwitterListPanel(this);
 		tsp = new TwitterStatusPanel(this);
-		add(tlp, BorderLayout.NORTH);
+		add(tlf, BorderLayout.WEST);
+		add(tlp, BorderLayout.CENTER);
 		add(tsp, BorderLayout.SOUTH);
 	}
 
@@ -46,5 +49,9 @@ public class TwitterFrame extends Frame {
 
 	public TwitterStatusPanel getTwitterStatusPanel() {
 		return tsp;
+	}
+
+	public TwitterListFriends getTwitterListFriends() {
+		return tlf;
 	}
 }

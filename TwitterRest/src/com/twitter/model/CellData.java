@@ -1,6 +1,6 @@
 package com.twitter.model;
 
-public class TwitterTimeLine {
+public class CellData {
 
 	private String profileImage;
 	private String pseudo;

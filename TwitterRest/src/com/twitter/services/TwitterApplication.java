@@ -5,9 +5,6 @@ import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
 
-import org.apache.tomcat.util.net.URL;
-
-import twitter4j.PagableResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -92,6 +89,7 @@ public abstract class TwitterApplication {
 
 	/**
 	 * Retourne le nom de l'utilisateur
+	 * 
 	 * @return User.
 	 */
 	public static String getMyName() {
@@ -103,9 +101,10 @@ public abstract class TwitterApplication {
 			return "User";
 		}
 	}
-	
+
 	/**
 	 * Retourne l'image de l'utilisateur
+	 * 
 	 * @return Image.
 	 */
 	public static ImageIcon getMyImage() {
@@ -120,15 +119,17 @@ public abstract class TwitterApplication {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Retourne la liste des amis
+	 * 
 	 * @return friendList.
 	 * @throws TwitterException
 	 */
-	public static PagableResponseList<User> getListFriends() throws TwitterException{
+	public static List<User> getListFriends() throws TwitterException {
 		Twitter twitter = login();
-		PagableResponseList<User> friendList = twitter.getFriendsList(twitter.getId(), 20);
+		List<User> friendList = twitter.getFollowersList(twitter.getId(), -1);
+		System.out.println("Number of Followers : " + friendList.size());
 		return friendList;
 	}
 
