@@ -11,7 +11,8 @@ public class TwitterFrame extends Frame {
 	private TwitterListPanel tlp;
 	private TwitterStatusPanel tsp;
 	private TwitterListFriends tlf;
-
+	private TwitterHeaderPanel thp;
+	
 	public TwitterFrame() {
 		guiFactory();
 
@@ -38,9 +39,11 @@ public class TwitterFrame extends Frame {
 		tlf = new TwitterListFriends(this);
 		tlp = new TwitterListPanel(this);
 		tsp = new TwitterStatusPanel(this);
+		thp = new TwitterHeaderPanel(this);
 		add(tlf, BorderLayout.WEST);
 		add(tlp, BorderLayout.CENTER);
 		add(tsp, BorderLayout.SOUTH);
+		add(thp, BorderLayout.NORTH);
 	}
 
 	public TwitterListPanel getTwitterListPanel() {
