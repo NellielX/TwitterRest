@@ -39,13 +39,13 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 
 		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
-						10, 0, 0), 0, 0));
+						10, 15, 0), 0, 0));
 		add(txtStatus, new GridBagConstraints(2, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL,
-				new Insets(0, 10, 0, 10), 0, 0));
+				new Insets(0, 10, 15, 10), 0, 0));
 		add(btnUpdate, new GridBagConstraints(3, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
-						0, 0, 10), 0, 0));
+						0, 15, 10), 0, 0));
 
 	}
 
