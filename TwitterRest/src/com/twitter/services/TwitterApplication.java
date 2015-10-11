@@ -84,4 +84,15 @@ public abstract class TwitterApplication {
 		return statuses;
 	}
 
+	public static String getMyName() {
+		try {
+			Twitter twitter = login();
+			return twitter.getScreenName();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+			return "User";
+		}
+
+	}
+
 }

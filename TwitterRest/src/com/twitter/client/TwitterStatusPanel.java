@@ -26,7 +26,7 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 
 	public TwitterStatusPanel(TwitterFrame tf) {
 		this.tf = tf;
-
+		lbUser = new JLabel(TwitterApplication.getMyName());
 		txtStatus.setActionCommand(PUBLISH_TWEET);
 		btnUpdate.addActionListener(this);
 		txtStatus.addActionListener(this);
