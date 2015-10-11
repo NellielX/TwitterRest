@@ -3,10 +3,15 @@ package com.twitter.services;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.swing.ImageIcon;
+
+import org.apache.tomcat.util.net.URL;
+
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.User;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
@@ -84,6 +89,10 @@ public abstract class TwitterApplication {
 		return statuses;
 	}
 
+	/**
+	 * Retourne le nom de l'utilisateur
+	 * @return User.
+	 */
 	public static String getMyName() {
 		try {
 			Twitter twitter = login();
@@ -92,7 +101,23 @@ public abstract class TwitterApplication {
 			e.printStackTrace();
 			return "User";
 		}
-
+	}
+	
+	/**
+	 * Retourne l'image de l'utilisateur
+	 * @return Image.
+	 */
+	public static ImageIcon getMyImage() {
+		try {
+			Twitter twitter = login();
+			User user = twitter.showUser(twitter.getId());
+			String url = user.getProfileImageURL();
+			ImageIcon img = new ImageIcon(url);
+			return img;
+		} catch (TwitterException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }
