@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 
 import org.apache.tomcat.util.net.URL;
 
+import twitter4j.PagableResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -118,6 +119,17 @@ public abstract class TwitterApplication {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	/**
+	 * Retourne la liste des amis
+	 * @return friendList.
+	 * @throws TwitterException
+	 */
+	public static PagableResponseList<User> getListFriends() throws TwitterException{
+		Twitter twitter = login();
+		PagableResponseList<User> friendList = twitter.getFriendsList(twitter.getId(), 20);
+		return friendList;
 	}
 
 }
