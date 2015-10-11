@@ -1,6 +1,9 @@
 package com.twitter.client;
 
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -36,7 +39,7 @@ public class TwitterListFriends extends JPanel {
 		DefaultListModel<CellData> listModel = new DefaultListModel<>();
 
 		// -- -- -- -- -- Default Values -- -- --
-		List<User> test = null;
+		List<User> test = new ArrayList<>();
 		try {
 			test = TwitterApplication.getListFriends();
 		} catch (TwitterException e) {
@@ -53,6 +56,43 @@ public class TwitterListFriends extends JPanel {
 
 		listUser = new JList<CellData>(listModel);
 		listUser.setCellRenderer(new TimelineCellRenderer());
+		listUser.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 2) {
+			          int index = listUser.locationToIndex(e.getPoint());
+			          if (index >= 0) {
+			            CellData aUser = listUser.getModel().getElementAt(index);
+			            System.out.println("Pseudo "+aUser.getPseudo());			            
+			          }
+			        }				
+			}
+		});
 		listUser.setVisibleRowCount(9);
 		listUser.setPreferredSize(new Dimension(200, 500));
 		pane = new JScrollPane(listUser);
