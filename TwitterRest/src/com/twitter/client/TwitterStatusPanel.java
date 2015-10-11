@@ -12,8 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.twitter.services.TwitterApplication;
+
 public class TwitterStatusPanel extends JPanel implements ActionListener {
 
+	private static final String PUBLISH_TWEET = "publish tweet";
 	private static final long serialVersionUID = 4855570765891966882L;
 	private TwitterFrame tf;
 
@@ -24,6 +27,7 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	public TwitterStatusPanel(TwitterFrame tf) {
 		this.tf = tf;
 
+		txtStatus.setActionCommand(PUBLISH_TWEET);
 		btnUpdate.addActionListener(this);
 		txtStatus.addActionListener(this);
 
@@ -46,6 +50,15 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		String actionCommand = e.getActionCommand();
+		
+		if (e.getSource().equals(btnUpdate)|| actionCommand.equals(PUBLISH_TWEET)) {
+			String text = txtStatus.getText().trim();
+			if (text.length() != 0) {
+				TwitterApplication.publish(text);
+				tf.getTwitterListPanel().updateJlist();
+				txtStatus.setText("");
+			}
+		}
 	}
 }

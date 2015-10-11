@@ -19,6 +19,7 @@ public class TwitterListPanel extends JPanel {
 	private static final long serialVersionUID = 4558427651243865198L;
 	private TwitterFrame tf;
 	private JList<TwitterTimeLine> listTimeline;
+	private JScrollPane pane;
 
 	public TwitterListPanel(TwitterFrame tf) {
 		this.tf = tf;
@@ -26,16 +27,19 @@ public class TwitterListPanel extends JPanel {
 	}
 
 	public void updateJlist() {
+		if(pane != null){
+			remove(pane);
+			revalidate();
+		}
 		DefaultListModel<TwitterTimeLine> listModel = new DefaultListModel<>();
 
 		// -- -- -- -- -- Default Values -- -- --
 		List<Status> test = null;
 		try {
-			test = new TwitterApplication().getUserTimeline();
+			test = TwitterApplication.getUserTimeline();
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
-
 		for (Status status : test) {
 			TwitterTimeLine element = new TwitterTimeLine();
 			element.setProfileImage(status.getUser().getProfileImageURL());
@@ -43,14 +47,14 @@ public class TwitterListPanel extends JPanel {
 			element.setStatus(status.getText());
 			listModel.addElement(element);
 		}
-		System.out.println("Size of status list : " + listModel.size());
 		// -- -- -- -- -- -- -- -- -- -- -- -- --
 		
 		listTimeline = new JList<TwitterTimeLine>(listModel);
 		listTimeline.setCellRenderer(new TimelineCellRenderer());
 		listTimeline.setVisibleRowCount(9);
 		listTimeline.setPreferredSize(new Dimension(500, 500));
-		JScrollPane pane = new JScrollPane(listTimeline);
+		pane = new JScrollPane(listTimeline);
+		
 		add(pane);
 	}
 

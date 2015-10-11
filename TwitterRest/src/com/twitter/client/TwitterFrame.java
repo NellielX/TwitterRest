@@ -8,6 +8,8 @@ import java.awt.Toolkit;
 public class TwitterFrame extends Frame {
 
 	private static final long serialVersionUID = -7470915094971302312L;
+	private TwitterListPanel tlp;
+	private TwitterStatusPanel tsp;
 
 	public TwitterFrame() {
 		guiFactory();
@@ -32,13 +34,17 @@ public class TwitterFrame extends Frame {
 	}
 
 	private void initTwitterPanels() {
-
-		TwitterListPanel tlp = new TwitterListPanel(this);
-
-		TwitterStatusPanel tsp = new TwitterStatusPanel(this);
-
+		tlp = new TwitterListPanel(this);
+		tsp = new TwitterStatusPanel(this);
 		add(tlp, BorderLayout.NORTH);
 		add(tsp, BorderLayout.SOUTH);
+	}
 
+	public TwitterListPanel getTwitterListPanel() {
+		return tlp;
+	}
+
+	public TwitterStatusPanel getTwitterStatusPanel() {
+		return tsp;
 	}
 }
