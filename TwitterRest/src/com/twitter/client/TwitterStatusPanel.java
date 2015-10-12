@@ -26,8 +26,8 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 
 	public TwitterStatusPanel(TwitterFrame tf) {
 		this.tf = tf;
-		lbUser = new JLabel(TwitterApplication.getMyName());
-		lbUser.setIcon(TwitterApplication.getMyImage());
+		lbUser = new JLabel(TwitterApplication.getInstance().getMyName());
+		lbUser.setIcon(TwitterApplication.getInstance().getMyImage());
 		txtStatus.setActionCommand(PUBLISH_TWEET);
 		btnUpdate.addActionListener(this);
 		txtStatus.addActionListener(this);
@@ -56,8 +56,8 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 		if (e.getSource().equals(btnUpdate)|| actionCommand.equals(PUBLISH_TWEET)) {
 			String text = txtStatus.getText().trim();
 			if (text.length() != 0) {
-				TwitterApplication.publish(text);
-				tf.getTwitterListPanel().updateJlist();
+				TwitterApplication.getInstance().publish(text);
+				tf.getTwitterListPanel().updateJlist(null);
 				txtStatus.setText("");
 			}
 		}

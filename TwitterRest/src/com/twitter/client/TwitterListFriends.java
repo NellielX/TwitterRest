@@ -26,7 +26,7 @@ public class TwitterListFriends extends JPanel {
 
 	public TwitterListFriends(TwitterFrame twitterFrame) {
 		this.tf = twitterFrame;
-		//setBackground(Color.yellow);
+		// setBackground(Color.yellow);
 		setPreferredSize(new Dimension(250, 500));
 		updateJlist();
 	}
@@ -34,22 +34,23 @@ public class TwitterListFriends extends JPanel {
 	public void updateJlist() {
 		if (pane != null) {
 			remove(pane);
-			revalidate();
+			// revalidate();
+
 		}
 		DefaultListModel<CellData> listModel = new DefaultListModel<>();
 
 		// -- -- -- -- -- Default Values -- -- --
 		List<User> test = new ArrayList<>();
 		try {
-			test = TwitterApplication.getListFriends();
+			test = TwitterApplication.getInstance().getListFriends();
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
 		for (User user : test) {
 			CellData element = new CellData();
 			element.setProfileImage(user.getProfileImageURL());
-			element.setPseudo(user.getName());
-			element.setStatus(user.getName());
+			element.setPseudo(user.getScreenName());
+			element.setStatus(user.getScreenName());
 			listModel.addElement(element);
 		}
 		// -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -57,40 +58,43 @@ public class TwitterListFriends extends JPanel {
 		listUser = new JList<CellData>(listModel);
 		listUser.setCellRenderer(new TimelineCellRenderer());
 		listUser.addMouseListener(new MouseListener() {
-			
+
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 2) {
-			          int index = listUser.locationToIndex(e.getPoint());
-			          if (index >= 0) {
-			            CellData aUser = listUser.getModel().getElementAt(index);
-			            System.out.println("Pseudo "+aUser.getPseudo());			            
-			          }
-			        }				
+				if (e.getClickCount() == 1) {
+					int index = listUser.locationToIndex(e.getPoint());
+					if (index >= 0) {
+						CellData aUser = listUser.getModel()
+								.getElementAt(index);
+						String friend = aUser.getPseudo();
+						System.out.println(friend);
+						tf.getTwitterListPanel().updateJlist(friend);
+					}
+				}
 			}
 		});
 		listUser.setVisibleRowCount(9);
@@ -98,6 +102,7 @@ public class TwitterListFriends extends JPanel {
 		pane = new JScrollPane(listUser);
 
 		add(pane);
+		revalidate();
 	}
 
 }

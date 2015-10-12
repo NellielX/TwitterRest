@@ -24,11 +24,11 @@ public class TwitterListPanel extends JPanel {
 	public TwitterListPanel(TwitterFrame tf) {
 		this.tf = tf;
 		setPreferredSize(new Dimension(800, 500));
-		//setBackground(Color.green);
-		updateJlist();
+		// setBackground(Color.green);
+		updateJlist(null);
 	}
 
-	public void updateJlist() {
+	public void updateJlist(String userName) {
 		if (pane != null) {
 			remove(pane);
 			revalidate();
@@ -38,7 +38,11 @@ public class TwitterListPanel extends JPanel {
 		// -- -- -- -- -- Default Values -- -- --
 		List<Status> test = null;
 		try {
-			test = TwitterApplication.getUserTimeline();
+			if (userName == null) {
+				test = TwitterApplication.getInstance().getUserTimeline();
+			} else {
+				test = TwitterApplication.getInstance().getFriendTimeline(userName);
+			}
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
@@ -58,6 +62,7 @@ public class TwitterListPanel extends JPanel {
 		pane = new JScrollPane(listTimeline);
 
 		add(pane);
+		tf.repaint();
 	}
 
 }

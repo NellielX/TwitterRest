@@ -1,10 +1,12 @@
 package com.twitter.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
 
+import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -13,7 +15,7 @@ import twitter4j.User;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
-public abstract class TwitterApplication {
+public class TwitterApplication {
 
 	private static final Logger logger = Logger
 			.getLogger(TwitterApplication.class.getName());
@@ -25,9 +27,24 @@ public abstract class TwitterApplication {
 	 * @throws TwitterException
 	 *             Gestion d'exeption par Twitter.
 	 */
-	private static Twitter login() throws TwitterException {
+	private static TwitterApplication TWITTER_APP_INSTANCE = null;
+	private static Twitter twitter;
 
-		Twitter twitter = new TwitterFactory().getInstance();
+	private TwitterApplication() {
+
+	}
+
+	public static TwitterApplication getInstance() {
+		if (TWITTER_APP_INSTANCE == null) {
+			TWITTER_APP_INSTANCE = new TwitterApplication();
+			twitter = login();
+		}
+		return TWITTER_APP_INSTANCE;
+	}
+
+	private static Twitter login() {
+
+		twitter = new TwitterFactory().getInstance();
 		try {
 			RequestToken requestToken = twitter.getOAuthRequestToken();
 			AccessToken accessToken = null;
@@ -47,7 +64,7 @@ public abstract class TwitterApplication {
 			logger.info("Got access token.");
 			logger.info("Access token: " + accessToken.getToken());
 			logger.info("Access token secret: " + accessToken.getTokenSecret());
-		} catch (IllegalStateException ie) {
+		} catch (IllegalStateException | TwitterException ie) {
 			if (!twitter.getAuthorization().isEnabled()) {
 				logger.severe("OAuth consumer key/secret is not set.");
 			}
@@ -61,10 +78,9 @@ public abstract class TwitterApplication {
 	 * @param message
 	 *            message a envoyer.
 	 */
-	public static void publish(String message) {
+	public void publish(String message) {
 
 		try {
-			Twitter twitter = login();
 			Status status = twitter.updateStatus(message);
 			logger.info("Successfully updated the status to ["
 					+ status.getText() + "].");
@@ -81,9 +97,28 @@ public abstract class TwitterApplication {
 	 * @throws TwitterException
 	 *             gestion de l'exeption par twitter
 	 */
-	public static List<Status> getUserTimeline() throws TwitterException {
-		Twitter twitter = login();
+	public List<Status> getUserTimeline() throws TwitterException {
 		List<Status> statuses = twitter.getHomeTimeline();
+		return statuses;
+	}
+
+	/**
+	 * Récupère la timeline d'un ami de l'utilisateur twitter.
+	 * 
+	 * @return statuses , la liste des status du compte.
+	 * @throws TwitterException
+	 *             gestion de l'exeption par twitter
+	 */
+	public List<Status> getFriendTimeline(String friendName)
+			throws TwitterException {
+		String searchuser[] = { friendName };
+		ResponseList<User> users_list = twitter.lookupUsers(searchuser);
+		List<Status> statuses = new ArrayList<>();
+		for (User user : users_list) {
+			if (user.getStatus() != null) {
+				statuses = twitter.getUserTimeline(user.getId());
+			}
+		}
 		return statuses;
 	}
 
@@ -92,9 +127,8 @@ public abstract class TwitterApplication {
 	 * 
 	 * @return User.
 	 */
-	public static String getMyName() {
+	public String getMyName() {
 		try {
-			Twitter twitter = login();
 			return twitter.getScreenName();
 		} catch (TwitterException e) {
 			e.printStackTrace();
@@ -107,9 +141,8 @@ public abstract class TwitterApplication {
 	 * 
 	 * @return Image.
 	 */
-	public static ImageIcon getMyImage() {
+	public ImageIcon getMyImage() {
 		try {
-			Twitter twitter = login();
 			User user = twitter.showUser(twitter.getId());
 			String url = user.getProfileImageURL();
 			ImageIcon img = new ImageIcon(url);
@@ -126,8 +159,7 @@ public abstract class TwitterApplication {
 	 * @return friendList.
 	 * @throws TwitterException
 	 */
-	public static List<User> getListFriends() throws TwitterException {
-		Twitter twitter = login();
+	public List<User> getListFriends() throws TwitterException {
 		List<User> friendList = twitter.getFollowersList(twitter.getId(), -1);
 		System.out.println("Number of Followers : " + friendList.size());
 		return friendList;

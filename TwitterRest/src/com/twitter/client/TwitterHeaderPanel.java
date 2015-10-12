@@ -4,8 +4,10 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import com.twitter.services.TwitterApplication;
 
 public class TwitterHeaderPanel extends JPanel{
@@ -19,7 +21,7 @@ public class TwitterHeaderPanel extends JPanel{
 		this.tf = tf;
 		
 		lbUser = new JLabel();
-		lbUser.setIcon(TwitterApplication.getMyImage());
+		lbUser.setIcon(TwitterApplication.getInstance().getMyImage());
 
 		setLayout(new GridBagLayout());
 		lbUser.setMinimumSize(new Dimension(300, 300));
