@@ -26,7 +26,7 @@ public class TwitterFrame extends Frame {
 	private void guiFactory() {
 		setTitle("Twitter W");
 
-		setResizable(true);
+		setResizable(false);
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		setSize(1300, 600);
