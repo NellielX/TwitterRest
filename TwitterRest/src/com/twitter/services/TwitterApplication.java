@@ -263,5 +263,21 @@ public class TwitterApplication {
 		int nbAbonnement = user.getFriendsCount();
 		return nbAbonnement;
 	}
-
+	
+	/**
+	 * Retourne le pseudo de l'utilisateur
+	 * @return pseudo.
+	 */
+	public String getMyPseudo(){
+		User user = null;
+		try {
+			user = twitter.showUser(twitter.getId());
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
+		String pseudo = user.getScreenName();
+		return pseudo;
+	}
 }
