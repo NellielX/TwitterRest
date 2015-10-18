@@ -213,8 +213,15 @@ public class TwitterApplication {
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
-	public int getNbFriends() throws IllegalStateException, TwitterException{
-		User user = twitter.showUser(twitter.getId());
+	public int getNbFriends(){
+		User user = null;
+		try {
+			user = twitter.showUser(twitter.getId());
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
 		int nbFriends = user.getFollowersCount();
 		return nbFriends;
 	}
@@ -225,10 +232,36 @@ public class TwitterApplication {
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
-	public int getNbTweet() throws IllegalStateException, TwitterException{
-		User user = twitter.showUser(twitter.getId());
+	public int getNbTweet(){
+		User user = null;
+		try {
+			user = twitter.showUser(twitter.getId());
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
 		int nbStatus = user.getStatusesCount();
 		return nbStatus;
+	}
+	
+	/**
+	 * Retourne le nombre d'abonnement
+	 * @return nbAbonnement.
+	 * @throws IllegalStateException
+	 * @throws TwitterException
+	 */
+	public int getNbAbonnement(){
+		User user = null;
+		try {
+			user = twitter.showUser(twitter.getId());
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
+		int nbAbonnement = user.getFriendsCount();
+		return nbAbonnement;
 	}
 
 }
