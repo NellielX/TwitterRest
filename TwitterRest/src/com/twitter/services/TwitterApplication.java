@@ -20,7 +20,8 @@ import twitter4j.auth.RequestToken;
 
 public class TwitterApplication {
 
-	private static final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
+	private static final Logger logger = Logger
+			.getLogger(TwitterApplication.class.getName());
 
 	/**
 	 * Méthode de connexion au compte Twitter
@@ -180,22 +181,24 @@ public class TwitterApplication {
 	 * Retourne la couleur de fond du profile utilisateur
 	 * 
 	 * @return couleurFond.
-	 * @throws MalformedURLException 
-	 * @throws TwitterException 
-	 * @throws IllegalStateException 
+	 * @throws MalformedURLException
+	 * @throws TwitterException
+	 * @throws IllegalStateException
 	 */
-	public Color getMyBackgroundColor()  {		
+	public Color getMyBackgroundColor() {
 		try {
 			User user = twitter.showUser(twitter.getId());
 			String couleur = user.getProfileBackgroundColor();
-			Color couleurFond = Color.decode("#"+couleur+"");
+			if (couleur.equals("000000"))
+				return Color.decode("#c0deed");
+			Color couleurFond = Color.decode("#" + couleur + "");
 			return couleurFond;
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
-			return null;
+			return Color.decode("#c0deed");
 		} catch (TwitterException e) {
 			e.printStackTrace();
-			return null;
+			return Color.decode("#c0deed");
 		}
 	}
 
@@ -270,12 +273,13 @@ public class TwitterApplication {
 		int nbAbonnement = user.getFriendsCount();
 		return nbAbonnement;
 	}
-	
+
 	/**
 	 * Retourne le pseudo de l'utilisateur
+	 * 
 	 * @return pseudo.
 	 */
-	public String getMyPseudo(){
+	public String getMyPseudo() {
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
