@@ -88,8 +88,7 @@ public class TwitterListFriends extends JPanel {
 				if (e.getClickCount() == 1) {
 					int index = listUser.locationToIndex(e.getPoint());
 					if (index >= 0) {
-						CellData aUser = listUser.getModel()
-								.getElementAt(index);
+						CellData aUser = listUser.getModel().getElementAt(index);
 						String friend = aUser.getPseudo();
 						System.out.println(friend);
 						tf.getTwitterListPanel().updateJlist(friend);

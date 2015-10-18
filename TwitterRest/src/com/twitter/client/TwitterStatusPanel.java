@@ -20,14 +20,13 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 4855570765891966882L;
 	private TwitterFrame tf;
 
-	private JLabel lbUser = new JLabel("User");
+	private JLabel lbUser;
 	private JTextField txtStatus = new JTextField("Enter new Status", 15);
 	private JButton btnUpdate = new JButton("Update");
 
 	public TwitterStatusPanel(TwitterFrame tf) {
 		this.tf = tf;
 		lbUser = new JLabel(TwitterApplication.getInstance().getMyName());
-		lbUser.setIcon(TwitterApplication.getInstance().getMyImage());
 		txtStatus.setActionCommand(PUBLISH_TWEET);
 		btnUpdate.addActionListener(this);
 		txtStatus.addActionListener(this);

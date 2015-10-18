@@ -1,10 +1,16 @@
 package com.twitter.services;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
+
+
+
+
 
 import twitter4j.ResponseList;
 import twitter4j.Status;
@@ -144,10 +150,13 @@ public class TwitterApplication {
 	public ImageIcon getMyImage() {
 		try {
 			User user = twitter.showUser(twitter.getId());
-			String url = user.getProfileImageURL();
+			URL url = new URL(user.getProfileImageURL());
 			ImageIcon img = new ImageIcon(url);
 			return img;
 		} catch (TwitterException e) {
+			e.printStackTrace();
+			return null;
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 			return null;
 		}
