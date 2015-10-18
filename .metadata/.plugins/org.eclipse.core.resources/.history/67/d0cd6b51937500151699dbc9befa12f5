@@ -179,7 +179,7 @@ public class TwitterApplication {
 	
 	/**
 	 * Retourne la couleur de fond du profile utilisateur
-	 * @return img.
+	 * @return img
 	 */
 	public ImageIcon getMyBackgroundColor() {
 		try {

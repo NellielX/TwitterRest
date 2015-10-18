@@ -177,10 +177,6 @@ public class TwitterApplication {
 		}
 	}
 	
-	/**
-	 * Retourne la couleur de fond du profile utilisateur
-	 * @return img.
-	 */
 	public ImageIcon getMyBackgroundColor() {
 		try {
 			User user = twitter.showUser(twitter.getId());

@@ -159,43 +159,6 @@ public class TwitterApplication {
 	}
 
 	/**
-	 * Retourne le background de l'utilisateur.
-	 * @return img.
-	 */
-	public ImageIcon getMyBanniere() {
-		try {
-			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundImageURL());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
-			e.printStackTrace();
-			return null;
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	/**
-	 * Retourne la couleur de fond du profile utilisateur
-	 * @return img.
-	 */
-	public ImageIcon getMyBackgroundColor() {
-		try {
-			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundColor());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
-			e.printStackTrace();
-			return null;
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	/**
 	 * Retourne la liste des amis
 	 * 
 	 * @return friendList.
@@ -209,7 +172,7 @@ public class TwitterApplication {
 	
 	/**
 	 * Retourne le nombre d'amis
-	 * @return nbFriends.
+	 * @return nbFriends
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
@@ -217,18 +180,6 @@ public class TwitterApplication {
 		User user = twitter.showUser(twitter.getId());
 		int nbFriends = user.getFollowersCount();
 		return nbFriends;
-	}
-	
-	/**
-	 * Retourne le nombre de tweet
-	 * @return nbStatus.
-	 * @throws IllegalStateException
-	 * @throws TwitterException
-	 */
-	public int getNbTweet() throws IllegalStateException, TwitterException{
-		User user = twitter.showUser(twitter.getId());
-		int nbStatus = user.getStatusesCount();
-		return nbStatus;
 	}
 
 }

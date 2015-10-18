@@ -159,43 +159,6 @@ public class TwitterApplication {
 	}
 
 	/**
-	 * Retourne le background de l'utilisateur.
-	 * @return img.
-	 */
-	public ImageIcon getMyBanniere() {
-		try {
-			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundImageURL());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
-			e.printStackTrace();
-			return null;
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	/**
-	 * Retourne la couleur de fond du profile utilisateur
-	 * @return img.
-	 */
-	public ImageIcon getMyBackgroundColor() {
-		try {
-			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundColor());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
-			e.printStackTrace();
-			return null;
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	/**
 	 * Retourne la liste des amis
 	 * 
 	 * @return friendList.
