@@ -1,9 +1,15 @@
 package com.twitter.client;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
+import java.net.MalformedURLException;
+
+import com.twitter.services.TwitterApplication;
+
+import twitter4j.TwitterException;
 
 public class TwitterFrame extends Frame {
 
@@ -31,8 +37,7 @@ public class TwitterFrame extends Frame {
 		Dimension d = tk.getScreenSize();
 		setSize(1300, d.height / 2);
 		initTwitterPanels();
-		setLocationRelativeTo(null);
-
+		setLocationRelativeTo(null);		
 	}
 
 	private void initTwitterPanels() {
@@ -40,10 +45,20 @@ public class TwitterFrame extends Frame {
 		tlp = new TwitterListPanel(this);
 		tsp = new TwitterStatusPanel(this);
 		thp = new TwitterHeaderPanel(this);
+		
+		try {
+			tlf.setBackground(TwitterApplication.getInstance().getMyBackgroundColor());	
+			tlp.setBackground(TwitterApplication.getInstance().getMyBackgroundColor());
+			tsp.setBackground(TwitterApplication.getInstance().getMyBackgroundColor());
+			thp.setBackground(TwitterApplication.getInstance().getMyBackgroundColor());
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
+
 		add(tlf, BorderLayout.WEST);
 		add(tlp, BorderLayout.CENTER);
 		add(tsp, BorderLayout.SOUTH);
-		add(thp, BorderLayout.NORTH);
+		add(thp, BorderLayout.NORTH);	
 	}
 
 	public TwitterListPanel getTwitterListPanel() {

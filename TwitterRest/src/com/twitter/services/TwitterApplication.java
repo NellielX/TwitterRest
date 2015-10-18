@@ -1,5 +1,6 @@
 package com.twitter.services;
 
+import java.awt.Color;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,8 +20,7 @@ import twitter4j.auth.RequestToken;
 
 public class TwitterApplication {
 
-	private static final Logger logger = Logger
-			.getLogger(TwitterApplication.class.getName());
+	private static final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
 
 	/**
 	 * Méthode de connexion au compte Twitter
@@ -179,18 +179,21 @@ public class TwitterApplication {
 	/**
 	 * Retourne la couleur de fond du profile utilisateur
 	 * 
-	 * @return img.
+	 * @return couleurFond.
+	 * @throws MalformedURLException 
+	 * @throws TwitterException 
+	 * @throws IllegalStateException 
 	 */
-	public ImageIcon getMyBackgroundColor() {
+	public Color getMyBackgroundColor()  {		
 		try {
 			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundColor());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
+			String couleur = user.getProfileBackgroundColor();
+			Color couleurFond = Color.decode("#"+couleur+"");
+			return couleurFond;
+		} catch (IllegalStateException e) {
 			e.printStackTrace();
 			return null;
-		} catch (MalformedURLException e) {
+		} catch (TwitterException e) {
 			e.printStackTrace();
 			return null;
 		}
