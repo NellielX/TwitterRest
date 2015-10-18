@@ -160,25 +160,25 @@ public class TwitterApplication {
 
 	/**
 	 * Retourne le background de l'utilisateur.
+	 * 
 	 * @return img.
 	 */
-	public ImageIcon getMyBanniere() {
+	public String getMyBanniere() {
 		try {
 			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundImageURL());
-			ImageIcon img = new ImageIcon(url);
-			return img;
-		} catch (TwitterException e) {
+			return user.getProfileBackgroundImageURL();
+		} catch (IllegalStateException e) {
 			e.printStackTrace();
 			return null;
-		} catch (MalformedURLException e) {
+		} catch (TwitterException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Retourne la couleur de fond du profile utilisateur
+	 * 
 	 * @return img.
 	 */
 	public ImageIcon getMyBackgroundColor() {
@@ -195,6 +195,7 @@ public class TwitterApplication {
 			return null;
 		}
 	}
+
 	/**
 	 * Retourne la liste des amis
 	 * 
@@ -206,14 +207,15 @@ public class TwitterApplication {
 		System.out.println("Number of Followers : " + friendList.size());
 		return friendList;
 	}
-	
+
 	/**
 	 * Retourne le nombre d'amis
+	 * 
 	 * @return nbFriends.
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
-	public int getNbFriends(){
+	public int getNbFriends() {
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
@@ -225,14 +227,15 @@ public class TwitterApplication {
 		int nbFriends = user.getFollowersCount();
 		return nbFriends;
 	}
-	
+
 	/**
 	 * Retourne le nombre de tweet
+	 * 
 	 * @return nbStatus.
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
-	public int getNbTweet(){
+	public int getNbTweet() {
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
@@ -244,14 +247,15 @@ public class TwitterApplication {
 		int nbStatus = user.getStatusesCount();
 		return nbStatus;
 	}
-	
+
 	/**
 	 * Retourne le nombre d'abonnement
+	 * 
 	 * @return nbAbonnement.
 	 * @throws IllegalStateException
 	 * @throws TwitterException
 	 */
-	public int getNbAbonnement(){
+	public int getNbAbonnement() {
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
