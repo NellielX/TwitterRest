@@ -58,7 +58,7 @@ public class TwitterListPanel extends JPanel {
 		listTimeline = new JList<CellData>(listModel);
 		listTimeline.setCellRenderer(new TimelineCellRenderer());
 		listTimeline.setVisibleRowCount(9);
-		listTimeline.setPreferredSize(new Dimension(1000, 500));
+		//listTimeline.setPreferredSize(new Dimension(1000, 500));
 		pane = new JScrollPane(listTimeline);
 
 		add(pane);
