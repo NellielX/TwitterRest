@@ -1,15 +1,10 @@
 package com.twitter.client;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
-import java.net.MalformedURLException;
 
 import com.twitter.services.TwitterApplication;
-
-import twitter4j.TwitterException;
 
 public class TwitterFrame extends Frame {
 
@@ -34,8 +29,7 @@ public class TwitterFrame extends Frame {
 		setResizable(true);
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Dimension d = tk.getScreenSize();
-		setSize(1300, d.height / 2);
+		setSize(1300, 600);
 		initTwitterPanels();
 		setLocationRelativeTo(null);		
 	}
@@ -71,5 +65,9 @@ public class TwitterFrame extends Frame {
 
 	public TwitterListFriends getTwitterListFriends() {
 		return tlf;
+	}
+
+	public TwitterHeaderPanel getTwitterHeaderPanel() {
+		return thp;
 	}
 }

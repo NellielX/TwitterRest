@@ -51,13 +51,15 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
-		
-		if (e.getSource().equals(btnUpdate)|| actionCommand.equals(PUBLISH_TWEET)) {
+
+		if (e.getSource().equals(btnUpdate)
+				|| actionCommand.equals(PUBLISH_TWEET)) {
 			String text = txtStatus.getText().trim();
 			if (text.length() != 0) {
 				TwitterApplication.getInstance().publish(text);
 				tf.getTwitterListPanel().updateJlist(null);
 				txtStatus.setText("");
+				tf.getTwitterHeaderPanel().initdata();
 			}
 		}
 	}
