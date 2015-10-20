@@ -7,6 +7,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 
 import twitter4j.Status;
 import twitter4j.TwitterException;
@@ -20,15 +21,43 @@ public class TwitterListPanel extends JPanel {
 	private TwitterFrame tf;
 	private JList<CellData> listTimeline;
 	private JScrollPane pane;
+	private String nameOfshownStatus = null;
+	private Thread t;
 
 	public TwitterListPanel(TwitterFrame tf) {
 		this.tf = tf;
 		setPreferredSize(new Dimension(800, 500));
 		// setBackground(Color.green);
+		nameOfshownStatus = null;
 		updateJlist(null);
+		//launchRefreshThread();
+	}
+
+	private void launchRefreshThread() {
+		Runnable r = new Runnable() {
+			public void run() {
+				Thread one = new Thread() {
+					public void run() {
+						while (true) {
+							try {
+								Thread.sleep(4000);
+								System.out.println("Mise à jour automatique de la timelme");
+								updateJlist(nameOfshownStatus);
+							} catch (InterruptedException v) {
+								System.out.println(v);
+							}
+						}
+					}
+				};
+
+				one.start();
+			}
+		};
+		SwingUtilities.invokeLater(r);
 	}
 
 	public void updateJlist(String userName) {
+		nameOfshownStatus = userName;
 		if (pane != null) {
 			remove(pane);
 			revalidate();
@@ -41,7 +70,8 @@ public class TwitterListPanel extends JPanel {
 			if (userName == null) {
 				test = TwitterApplication.getInstance().getUserTimeline();
 			} else {
-				test = TwitterApplication.getInstance().getFriendTimeline(userName);
+				test = TwitterApplication.getInstance().getFriendTimeline(
+						userName);
 			}
 		} catch (TwitterException e) {
 			e.printStackTrace();
@@ -58,10 +88,12 @@ public class TwitterListPanel extends JPanel {
 		listTimeline = new JList<CellData>(listModel);
 		listTimeline.setCellRenderer(new TimelineCellRenderer());
 		listTimeline.setVisibleRowCount(9);
-		//listTimeline.setPreferredSize(new Dimension(1000, 500));
+		// listTimeline.setPreferredSize(new Dimension(1000, 500));
 		pane = new JScrollPane(listTimeline);
 
 		add(pane);
+		revalidate();
+
 		tf.repaint();
 	}
 
