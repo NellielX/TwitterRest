@@ -20,13 +20,15 @@ import twitter4j.auth.RequestToken;
 
 public class TwitterApplication {
 
-	private static final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
+	private static final Logger logger = Logger
+			.getLogger(TwitterApplication.class.getName());
 
 	/**
 	 * Méthode de connexion au compte Twitter
 	 * 
 	 * @return twitter Objet Twitter.
-	 * @throws TwitterException Gestion d'exeption par Twitter.
+	 * @throws TwitterException
+	 *             Gestion d'exeption par Twitter.
 	 */
 	private static TwitterApplication TWITTER_APP_INSTANCE = null;
 	private static Twitter twitter;
@@ -37,6 +39,7 @@ public class TwitterApplication {
 
 	/**
 	 * Renvoi une instance de twitter
+	 * 
 	 * @return TWITTER_APP_INSTANCE.
 	 */
 	public static TwitterApplication getInstance() {
@@ -49,7 +52,8 @@ public class TwitterApplication {
 
 	/**
 	 * Fonction de login sur twitter.
-	 * @return twitter  Objet Twitter
+	 * 
+	 * @return twitter Objet Twitter
 	 */
 	private static Twitter login() {
 
@@ -84,7 +88,8 @@ public class TwitterApplication {
 	/**
 	 * Méthode de publication des messages sur Twitter.
 	 * 
-	 * @param message message a envoyer.
+	 * @param message
+	 *            message a envoyer.
 	 */
 	public void publish(String message) {
 
@@ -102,7 +107,8 @@ public class TwitterApplication {
 	 * Récupère la timeline de l'utilisateur twitter.
 	 * 
 	 * @return statuses , la liste des status du compte.
-	 * @throws TwitterException Gestion de l'exeption par twitter
+	 * @throws TwitterException
+	 *             Gestion de l'exeption par twitter
 	 */
 	public List<Status> getUserTimeline() throws TwitterException {
 		List<Status> statuses = twitter.getHomeTimeline();
@@ -113,7 +119,8 @@ public class TwitterApplication {
 	 * Récupère la timeline d'un ami de l'utilisateur twitter.
 	 * 
 	 * @return statuses , la liste des status du compte.
-	 * @throws TwitterException Gestion de l'exeption par twitter
+	 * @throws TwitterException
+	 *             Gestion de l'exeption par twitter
 	 */
 	public List<Status> getFriendTimeline(String friendName)
 			throws TwitterException {
@@ -167,14 +174,19 @@ public class TwitterApplication {
 	 * 
 	 * @return img.
 	 */
-	public String getMyBanniere() {
+	public ImageIcon getMyBanniere() {
 		try {
 			User user = twitter.showUser(twitter.getId());
-			return user.getProfileBackgroundImageURL();
+			URL url = new URL(user.getProfileBackgroundImageURL());
+			ImageIcon img = new ImageIcon(url);
+			return img;
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 			return null;
 		} catch (TwitterException e) {
+			e.printStackTrace();
+			return null;
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 			return null;
 		}

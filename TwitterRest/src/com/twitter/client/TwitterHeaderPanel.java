@@ -22,6 +22,7 @@ public class TwitterHeaderPanel extends JPanel implements MouseListener {
 	private JLabel lbNbAbonnements;
 	private JLabel lbPseudo;
 	private JLabel lbNbFriends;
+	private JLabel lbBanniere;
 
 	public TwitterHeaderPanel(TwitterFrame tf) {
 		this.tf = tf;
@@ -52,6 +53,9 @@ public class TwitterHeaderPanel extends JPanel implements MouseListener {
 		lbNbFriends = new JLabel("Nombre d'amis : "
 				+ TwitterApplication.getInstance().getNbFriends());
 		lbNbFriends.setMinimumSize(new Dimension(300, 300));
+		lbBanniere = new JLabel(TwitterApplication.getInstance()
+				.getMyBanniere());
+		
 		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(
 						10, 20, 15, 0), 0, 0));
@@ -67,6 +71,9 @@ public class TwitterHeaderPanel extends JPanel implements MouseListener {
 		add(lbNbFriends, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(
 						25, 400, 0, 0), 0, 0));
+		add(lbBanniere, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(
+						0, 0, 0, 0), 0, 0));
 		revalidate();
 	}
 

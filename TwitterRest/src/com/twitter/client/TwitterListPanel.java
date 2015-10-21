@@ -30,7 +30,7 @@ public class TwitterListPanel extends JPanel {
 	 */
 	public TwitterListPanel(TwitterFrame tf) {
 		this.tf = tf;
-		setPreferredSize(new Dimension(800, 500));
+		setPreferredSize(new Dimension(800, 550));
 		nameOfshownStatus = null;
 		updateJlist(null);
 	}
