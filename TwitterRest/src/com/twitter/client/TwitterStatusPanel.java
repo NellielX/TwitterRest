@@ -24,6 +24,10 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	private JTextField txtStatus = new JTextField("Enter new Status", 15);
 	private JButton btnUpdate = new JButton("Update");
 
+	/**
+	 * Pannel d'affichage du statut
+	 * @param tf
+	 */
 	public TwitterStatusPanel(TwitterFrame tf) {
 		this.tf = tf;
 		lbUser = new JLabel(TwitterApplication.getInstance().getMyName());
@@ -49,6 +53,9 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	}
 
 	@Override
+	/**
+	 * Action pour publier un tweet et refresh la liste
+	 */
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
 

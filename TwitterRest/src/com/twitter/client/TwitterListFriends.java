@@ -24,18 +24,22 @@ public class TwitterListFriends extends JPanel {
 	private JList<CellData> listUser;
 	private JScrollPane pane;
 
+	/**
+	 * Liste des amis
+	 * @param twitterFrame
+	 */
 	public TwitterListFriends(TwitterFrame twitterFrame) {
 		this.tf = twitterFrame;
-		// setBackground(Color.yellow);
 		setPreferredSize(new Dimension(250, 500));
 		updateJlist();
 	}
 
+	/**
+	 * Update de la Jlist
+	 */
 	public void updateJlist() {
 		if (pane != null) {
 			remove(pane);
-			// revalidate();
-
 		}
 		DefaultListModel<CellData> listModel = new DefaultListModel<>();
 

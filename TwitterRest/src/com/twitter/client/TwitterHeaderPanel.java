@@ -28,6 +28,9 @@ public class TwitterHeaderPanel extends JPanel implements MouseListener {
 		initdata();
 	}
 
+	/**
+	 * Initialise les data
+	 */
 	public void initdata() {
 		removeAll();
 		lbUser = new JLabel(TwitterApplication.getInstance().getMyImage());

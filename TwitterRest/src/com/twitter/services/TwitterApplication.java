@@ -20,15 +20,13 @@ import twitter4j.auth.RequestToken;
 
 public class TwitterApplication {
 
-	private static final Logger logger = Logger
-			.getLogger(TwitterApplication.class.getName());
+	private static final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
 
 	/**
 	 * Méthode de connexion au compte Twitter
 	 * 
 	 * @return twitter Objet Twitter.
-	 * @throws TwitterException
-	 *             Gestion d'exeption par Twitter.
+	 * @throws TwitterException Gestion d'exeption par Twitter.
 	 */
 	private static TwitterApplication TWITTER_APP_INSTANCE = null;
 	private static Twitter twitter;
@@ -37,6 +35,10 @@ public class TwitterApplication {
 
 	}
 
+	/**
+	 * Renvoi une instance de twitter
+	 * @return TWITTER_APP_INSTANCE.
+	 */
 	public static TwitterApplication getInstance() {
 		if (TWITTER_APP_INSTANCE == null) {
 			TWITTER_APP_INSTANCE = new TwitterApplication();
@@ -45,6 +47,10 @@ public class TwitterApplication {
 		return TWITTER_APP_INSTANCE;
 	}
 
+	/**
+	 * Fonction de login sur twitter.
+	 * @return twitter  Objet Twitter
+	 */
 	private static Twitter login() {
 
 		twitter = new TwitterFactory().getInstance();
@@ -78,8 +84,7 @@ public class TwitterApplication {
 	/**
 	 * Méthode de publication des messages sur Twitter.
 	 * 
-	 * @param message
-	 *            message a envoyer.
+	 * @param message message a envoyer.
 	 */
 	public void publish(String message) {
 
@@ -97,8 +102,7 @@ public class TwitterApplication {
 	 * Récupère la timeline de l'utilisateur twitter.
 	 * 
 	 * @return statuses , la liste des status du compte.
-	 * @throws TwitterException
-	 *             gestion de l'exeption par twitter
+	 * @throws TwitterException Gestion de l'exeption par twitter
 	 */
 	public List<Status> getUserTimeline() throws TwitterException {
 		List<Status> statuses = twitter.getHomeTimeline();
@@ -109,8 +113,7 @@ public class TwitterApplication {
 	 * Récupère la timeline d'un ami de l'utilisateur twitter.
 	 * 
 	 * @return statuses , la liste des status du compte.
-	 * @throws TwitterException
-	 *             gestion de l'exeption par twitter
+	 * @throws TwitterException Gestion de l'exeption par twitter
 	 */
 	public List<Status> getFriendTimeline(String friendName)
 			throws TwitterException {
