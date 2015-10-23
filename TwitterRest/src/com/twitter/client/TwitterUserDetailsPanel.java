@@ -1,5 +1,6 @@
 package com.twitter.client;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
@@ -14,7 +15,7 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 4855570765891966882L;
 
-	public static final int MIN_WIDTH_HEIGHT = 70;
+	public static final int MIN_WIDTH_HEIGHT = 40;
 	private TwitterFrame tf;
 
 	private JLabel lbUser = new JLabel("User Picture");
@@ -22,12 +23,13 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 	private JLabel lbNbAbonnements;
 	private JLabel lbPseudo;
 	private JLabel lbNbFriends;
-
+	
 	public TwitterUserDetailsPanel(TwitterFrame tf) {
 
 		this.tf = tf;
 		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH,
 				MIN_WIDTH_HEIGHT));
+		
 		addMouseListener(this);
 		setLayout(new GridBagLayout());
 		initdata();
@@ -41,17 +43,17 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 		lbUser = new JLabel(TwitterApplication.getInstance().getMyImage());
 		lbUser.setMinimumSize(new Dimension(MIN_WIDTH_HEIGHT, MIN_WIDTH_HEIGHT));
 
-		lbNbTweets = new JLabel("Tweets : "
-				+ TwitterApplication.getInstance().getNbTweet());
+		lbNbTweets = new JLabel("                    Tweets : "
+				+ TwitterApplication.getInstance().getNbTweet() + "                  /                  ");
 
 		lbNbAbonnements = new JLabel("Abonnements : "
-				+ TwitterApplication.getInstance().getNbAbonnement());
+				+ TwitterApplication.getInstance().getNbAbonnement() + "                  /                  ");
 
-		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo());
+		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo() + "                 /                  ");
 
 		lbNbFriends = new JLabel("Nombre d'amis : "
 				+ TwitterApplication.getInstance().getNbFriends());
-
+		
 		add(lbUser);
 		add(lbNbTweets);
 		add(lbNbAbonnements);

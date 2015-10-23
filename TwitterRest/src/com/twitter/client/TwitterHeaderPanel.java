@@ -13,7 +13,7 @@ public class TwitterHeaderPanel extends JPanel {
 
 	private static final long serialVersionUID = -7470915094971302312L;
 	public static final int FRAME_WIDTH = 1300;
-	public static final int FRAME_HEIGHT = 300;
+	public static final int FRAME_HEIGHT = 270;
 
 	private TwitterFrame tf;
 	private TwitterUserDetailsPanel tudp;
