@@ -41,13 +41,13 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 		btnUpdate.setMinimumSize(new Dimension(200, 300));
 
 		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(12,
 						20, 15, 0), 0, 0));
 		add(txtStatus, new GridBagConstraints(2, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL,
-				new Insets(0, 20, 15, 10), 0, 0));
+				new Insets(12, 20, 15, 10), 0, 0));
 		add(btnUpdate, new GridBagConstraints(3, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(12,
 						20, 15, 10), 0, 0));
 
 	}

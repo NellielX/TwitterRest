@@ -12,7 +12,7 @@ public class TwitterFrame extends JFrame {
 
 	private static final long serialVersionUID = -7470915094971302312L;
 	public static final int FRAME_WIDTH = 1300;
-	public static final int FRAME_HEIGHT = 750;
+	public static final int FRAME_HEIGHT = 800;
 	private TwitterListPanel tlp;
 	private TwitterStatusPanel tsp;
 	private TwitterListFriends tlf;
