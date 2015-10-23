@@ -56,7 +56,7 @@ public class TwitterApplication {
 	 * @return twitter Objet Twitter
 	 */
 	private static Twitter login() {
-
+		logger.info("Création du login");
 		twitter = new TwitterFactory().getInstance();
 		try {
 			RequestToken requestToken = twitter.getOAuthRequestToken();
@@ -111,6 +111,7 @@ public class TwitterApplication {
 	 *             Gestion de l'exeption par twitter
 	 */
 	public List<Status> getUserTimeline() throws TwitterException {
+		logger.info("Récupération de le timeline d'un utilisateur");
 		List<Status> statuses = twitter.getHomeTimeline();
 		return statuses;
 	}
@@ -124,6 +125,7 @@ public class TwitterApplication {
 	 */
 	public List<Status> getFriendTimeline(String friendName)
 			throws TwitterException {
+		logger.info("Récupération de la timeline d'un ami");
 		String searchuser[] = { friendName };
 		ResponseList<User> users_list = twitter.lookupUsers(searchuser);
 		List<Status> statuses = new ArrayList<>();
@@ -141,6 +143,7 @@ public class TwitterApplication {
 	 * @return User.
 	 */
 	public String getMyName() {
+		logger.info("Récupération du nom de tweet de l'utilisateur");
 		String userName = "User";
 		try {
 			userName = twitter.getScreenName();
@@ -156,18 +159,19 @@ public class TwitterApplication {
 	 * @return Image.
 	 */
 	public ImageIcon getMyImage() {
+		logger.info("Récupération de l'image du profil");
+		ImageIcon img = null;
 		try {
 			User user = twitter.showUser(twitter.getId());
 			URL url = new URL(user.getProfileImageURL());
-			ImageIcon img = new ImageIcon(url);
-			return img;
+			img = new ImageIcon(url);
 		} catch (TwitterException e) {
 			e.printStackTrace();
-			return null;
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-			return null;
 		}
+		return img;
+
 	}
 
 	/**
@@ -176,6 +180,7 @@ public class TwitterApplication {
 	 * @return img.
 	 */
 	public ImageIcon getMyBanniere() {
+		logger.info("Récupération de la bannière.");
 		String defaultUrlImage = "http://www.blirk.net/wallpapers/1920x1200/pink-sky-wallpaper-1.jpg";
 		try {
 			User user = twitter.showUser(twitter.getId());
@@ -206,6 +211,7 @@ public class TwitterApplication {
 	 * @throws IllegalStateException
 	 */
 	public Color getMyBackgroundColor() {
+		logger.info("Récupération de la couleur de fond de tweeter");
 		try {
 			User user = twitter.showUser(twitter.getId());
 			String couleur = user.getProfileBackgroundColor();
@@ -229,6 +235,7 @@ public class TwitterApplication {
 	 * @throws TwitterException
 	 */
 	public List<User> getListFriends() throws TwitterException {
+		logger.info("Récupération des amis");
 		List<User> friendList = twitter.getFollowersList(twitter.getId(), -1);
 		return friendList;
 	}
@@ -241,6 +248,7 @@ public class TwitterApplication {
 	 * @throws TwitterException
 	 */
 	public int getNbFriends() {
+		logger.info("Récupération du nombre d'amis");
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
@@ -261,6 +269,7 @@ public class TwitterApplication {
 	 * @throws TwitterException
 	 */
 	public int getNbTweet() {
+		logger.info("Récupération du nombre des tweets");
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
@@ -281,6 +290,7 @@ public class TwitterApplication {
 	 * @throws TwitterException
 	 */
 	public int getNbAbonnement() {
+		logger.info("Récupération du nombre d'abonnés");
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
@@ -299,6 +309,7 @@ public class TwitterApplication {
 	 * @return pseudo.
 	 */
 	public String getMyPseudo() {
+		logger.info("Récupération du pseudo");
 		User user = null;
 		try {
 			user = twitter.showUser(twitter.getId());
