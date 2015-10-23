@@ -21,7 +21,7 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 	private TwitterFrame tf;
 
 	private JLabel lbUser;
-	private JTextField txtStatus = new JTextField("Enter new Status", 15);
+	private JTextField txtStatus = new JTextField("", 15);
 	private JButton btnUpdate = new JButton("Update");
 
 	/**

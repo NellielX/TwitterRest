@@ -2,7 +2,9 @@ package com.twitter.client;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -15,7 +17,7 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 4855570765891966882L;
 
-	public static final int MIN_WIDTH_HEIGHT = 40;
+	public static final int MIN_WIDTH_HEIGHT = 60;
 	private TwitterFrame tf;
 
 	private JLabel lbUser = new JLabel("User Picture");
@@ -43,22 +45,32 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 		lbUser = new JLabel(TwitterApplication.getInstance().getMyImage());
 		lbUser.setMinimumSize(new Dimension(MIN_WIDTH_HEIGHT, MIN_WIDTH_HEIGHT));
 
-		lbNbTweets = new JLabel("                    Tweets : "
-				+ TwitterApplication.getInstance().getNbTweet() + "                  /                  ");
+		lbNbTweets = new JLabel("Tweets : "
+				+ TwitterApplication.getInstance().getNbTweet());
 
 		lbNbAbonnements = new JLabel("Abonnements : "
-				+ TwitterApplication.getInstance().getNbAbonnement() + "                  /                  ");
+				+ TwitterApplication.getInstance().getNbAbonnement());
 
-		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo() + "                 /                  ");
+		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo());
 
 		lbNbFriends = new JLabel("Nombre d'amis : "
 				+ TwitterApplication.getInstance().getNbFriends());
 		
-		add(lbUser);
-		add(lbNbTweets);
-		add(lbNbAbonnements);
-		add(lbPseudo);
-		add(lbNbFriends);
+		setLayout(new GridBagLayout());
+		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 100, 15, 0), 0, 0));	
+		
+		add(lbNbTweets, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 400, 10, 0), 0, 0));	
+		
+		add(lbNbAbonnements, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 600, 10, 0), 0, 0));	
+		
+		add(lbPseudo, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 800, 10, 0), 0, 0));	
+		
+		add(lbNbFriends, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 1000, 10, 0), 0, 0));	
 
 		revalidate();
 	}

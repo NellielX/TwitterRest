@@ -21,7 +21,7 @@ public class TwitterBannerPanel extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 4855570765891966882L;
 
-	public static final int MIN_WIDTH_HEIGHT = 210;
+	public static final int MIN_WIDTH_HEIGHT = 200;
 	private TwitterFrame tf;
 
 	private JLabel lbBanniere;
