@@ -141,12 +141,13 @@ public class TwitterApplication {
 	 * @return User.
 	 */
 	public String getMyName() {
+		String userName = "User";
 		try {
-			return twitter.getScreenName();
+			userName = twitter.getScreenName();
 		} catch (TwitterException e) {
 			e.printStackTrace();
-			return "User";
 		}
+		return userName;
 	}
 
 	/**
@@ -175,21 +176,25 @@ public class TwitterApplication {
 	 * @return img.
 	 */
 	public ImageIcon getMyBanniere() {
+		String defaultUrlImage = "http://www.blirk.net/wallpapers/1920x1200/pink-sky-wallpaper-1.jpg";
 		try {
 			User user = twitter.showUser(twitter.getId());
-			URL url = new URL(user.getProfileBackgroundImageURL());
+			String twitterUrl = user.getProfileBannerURL();
+			URL url;
+			if (twitterUrl == null)
+				url = new URL(defaultUrlImage);
+			else
+				url = new URL(twitterUrl);
 			ImageIcon img = new ImageIcon(url);
 			return img;
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
-			return null;
 		} catch (TwitterException e) {
 			e.printStackTrace();
-			return null;
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-			return null;
 		}
+		return null;
 	}
 
 	/**
@@ -225,7 +230,6 @@ public class TwitterApplication {
 	 */
 	public List<User> getListFriends() throws TwitterException {
 		List<User> friendList = twitter.getFollowersList(twitter.getId(), -1);
-		System.out.println("Number of Followers : " + friendList.size());
 		return friendList;
 	}
 
@@ -303,7 +307,7 @@ public class TwitterApplication {
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
-		String pseudo = user.getScreenName();
+		String pseudo = user.getName();
 		return pseudo;
 	}
 }
