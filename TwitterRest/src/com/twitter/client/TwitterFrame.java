@@ -2,7 +2,6 @@ package com.twitter.client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
@@ -17,8 +16,6 @@ public class TwitterFrame extends JFrame {
 	private TwitterStatusPanel tsp;
 	private TwitterListFriends tlf;
 	private TwitterHeaderPanel thp;
-	private TwitterBannierePanel tbp;
-	private TwitterHeaderEntierPanel thep;
 
 	public TwitterFrame() {
 		guiFactory();
@@ -43,7 +40,7 @@ public class TwitterFrame extends JFrame {
 		tlf = new TwitterListFriends(this);
 		tlp = new TwitterListPanel(this);
 		tsp = new TwitterStatusPanel(this);
-		thep = new TwitterHeaderEntierPanel(this);
+		thp = new TwitterHeaderPanel(this);
 		
 		Color twitterThemecolor = TwitterApplication.getInstance()
 				.getMyBackgroundColor();
@@ -51,14 +48,14 @@ public class TwitterFrame extends JFrame {
 			tlf.setBackground(twitterThemecolor);
 			tlp.setBackground(twitterThemecolor);
 			tsp.setBackground(twitterThemecolor);
-			thep.setBackground(twitterThemecolor);
+			thp.setBackground(twitterThemecolor);
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		}
 		add(tlf, BorderLayout.WEST);
 		add(tlp, BorderLayout.CENTER);
 		add(tsp, BorderLayout.SOUTH);
-		add(thep, BorderLayout.NORTH);
+		add(thp, BorderLayout.NORTH);
 			
 	}
 
@@ -74,15 +71,11 @@ public class TwitterFrame extends JFrame {
 		return tlf;
 	}
 
-	public TwitterHeaderPanel getTwitterHeaderPanel() {
+	public TwitterUserDetailsPanel getTwitterUserDetailsPanel() {
+		return thp.getTwitterUserDetailsPanel();
+	}
+	
+	public TwitterHeaderPanel getTwitterHeaderEntierPanel() {
 		return thp;
-	}
-	
-	public TwitterBannierePanel getTwitterBannierePanel() {
-		return tbp;
-	}
-	
-	public TwitterHeaderEntierPanel getTwitterHeaderEntierPanel() {
-		return thep;
 	}
 }

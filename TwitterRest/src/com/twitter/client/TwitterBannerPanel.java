@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 import com.twitter.services.TwitterApplication;
 
-public class TwitterBannierePanel extends JPanel implements MouseListener {
+public class TwitterBannerPanel extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 4855570765891966882L;
 
@@ -26,7 +26,7 @@ public class TwitterBannierePanel extends JPanel implements MouseListener {
 
 	private JLabel lbBanniere;
 
-	public TwitterBannierePanel(TwitterFrame tf) {
+	public TwitterBannerPanel(TwitterFrame tf) {
 		this.tf = tf;
 		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH,
 				MIN_WIDTH_HEIGHT));

@@ -1,101 +1,54 @@
 package com.twitter.client;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.RenderingHints;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import com.twitter.services.TwitterApplication;
 
-public class TwitterHeaderPanel extends JPanel implements MouseListener {
+public class TwitterHeaderPanel extends JPanel {
 
-	private static final long serialVersionUID = 4855570765891966882L;
+	private static final long serialVersionUID = -7470915094971302312L;
+	public static final int FRAME_WIDTH = 1300;
+	public static final int FRAME_HEIGHT = 300;
 
-	public static final int MIN_WIDTH_HEIGHT = 70;
 	private TwitterFrame tf;
-
-	private JLabel lbUser = new JLabel("User Picture");
-	private JLabel lbNbTweets;
-	private JLabel lbNbAbonnements;
-	private JLabel lbPseudo;
-	private JLabel lbNbFriends;
-
+	private TwitterUserDetailsPanel tudp;
+	private TwitterBannerPanel tbp;
+	
 	public TwitterHeaderPanel(TwitterFrame tf) {
-		
 		this.tf = tf;
-		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH, MIN_WIDTH_HEIGHT));
-		initdata();
+		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH, FRAME_HEIGHT));
+		initTwitterPanels();
 	}
-
-	/**
-	 * Initialise les data
-	 */
-	public void initdata() {
-		removeAll();
-		lbUser = new JLabel(TwitterApplication.getInstance().getMyImage());
-		addMouseListener(this);
-		setLayout(new GridBagLayout());
-		lbUser.setMinimumSize(new Dimension(MIN_WIDTH_HEIGHT, MIN_WIDTH_HEIGHT));
-
-		lbNbTweets = new JLabel("Tweets : "
-				+ TwitterApplication.getInstance().getNbTweet());
-
-		lbNbAbonnements = new JLabel("Abonnements : "
-				+ TwitterApplication.getInstance().getNbAbonnement());
-
-		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo());
-
-		lbNbFriends = new JLabel("Nombre d'amis : "
-				+ TwitterApplication.getInstance().getNbFriends());
-
-		add(lbUser);
-		add(lbNbTweets);
-		add(lbNbAbonnements);
-		add(lbPseudo);
-		add(lbNbFriends);
+	
+	private void initTwitterPanels() {
 		
-		revalidate();
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		if (e.getClickCount() == 1) {
-			tf.getTwitterListPanel().updateJlist(null);
+		tudp = new TwitterUserDetailsPanel(tf);
+		tbp = new TwitterBannerPanel(tf);
+		
+		Color twitterThemecolor = TwitterApplication.getInstance().getMyBackgroundColor();
+		
+		try {
+			tudp.setBackground(twitterThemecolor);
+			tbp.setBackground(twitterThemecolor);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
 		}
+
+		add(tbp, BorderLayout.NORTH);
+		add(tudp, BorderLayout.SOUTH);			
 	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
+	
+	public TwitterUserDetailsPanel getTwitterUserDetailsPanel() {
+		return tudp;
 	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
+	
+	public TwitterBannerPanel getTwitterBannierePanel() {
+		return tbp;
 	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }

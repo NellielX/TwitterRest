@@ -66,7 +66,7 @@ public class TwitterStatusPanel extends JPanel implements ActionListener {
 				TwitterApplication.getInstance().publish(text);
 				tf.getTwitterListPanel().updateJlist(null);
 				txtStatus.setText("");
-				tf.getTwitterHeaderPanel().initdata();
+				tf.getTwitterUserDetailsPanel().initdata();
 			}
 		}
 	}
