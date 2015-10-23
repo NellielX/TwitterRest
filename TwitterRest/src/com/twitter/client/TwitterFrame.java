@@ -42,8 +42,8 @@ public class TwitterFrame extends JFrame {
 		tsp = new TwitterStatusPanel(this);
 		thp = new TwitterHeaderPanel(this);
 		
-		Color twitterThemecolor = TwitterApplication.getInstance()
-				.getMyBackgroundColor();
+		Color twitterThemecolor = TwitterApplication.getInstance().getMyBackgroundColor();
+		
 		try {
 			tlf.setBackground(twitterThemecolor);
 			tlp.setBackground(twitterThemecolor);
