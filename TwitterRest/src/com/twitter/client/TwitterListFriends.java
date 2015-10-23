@@ -17,7 +17,7 @@ import twitter4j.User;
 import com.twitter.model.CellData;
 import com.twitter.services.TwitterApplication;
 
-public class TwitterListFriends extends JPanel {
+public class TwitterListFriends extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 6687548345793592620L;
 	private TwitterFrame tf;
@@ -26,6 +26,7 @@ public class TwitterListFriends extends JPanel {
 
 	/**
 	 * Liste des amis
+	 * 
 	 * @param twitterFrame
 	 */
 	public TwitterListFriends(TwitterFrame twitterFrame) {
@@ -61,51 +62,50 @@ public class TwitterListFriends extends JPanel {
 
 		listUser = new JList<CellData>(listModel);
 		listUser.setCellRenderer(new TimelineCellRenderer());
-		listUser.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 1) {
-					int index = listUser.locationToIndex(e.getPoint());
-					if (index >= 0) {
-						CellData aUser = listUser.getModel().getElementAt(index);
-						String friend = aUser.getPseudo();
-						System.out.println(friend);
-						tf.getTwitterListPanel().updateJlist(friend);
-					}
-				}
-			}
-		});
+		listUser.addMouseListener(this);
 		listUser.setVisibleRowCount(9);
 		listUser.setPreferredSize(new Dimension(200, 500));
 		pane = new JScrollPane(listUser);
 
 		add(pane);
 		revalidate();
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if (e.getClickCount() == 1) {
+			int index = listUser.locationToIndex(e.getPoint());
+			if (index >= 0) {
+				CellData aUser = listUser.getModel().getElementAt(index);
+				String friend = aUser.getPseudo();
+				System.out.println(friend);
+				tf.getTwitterListPanel().updateJlist(friend);
+			}
+		}
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

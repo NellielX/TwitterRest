@@ -1,10 +1,19 @@
 package com.twitter.client;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
@@ -15,7 +24,7 @@ import twitter4j.TwitterException;
 import com.twitter.model.CellData;
 import com.twitter.services.TwitterApplication;
 
-public class TwitterListPanel extends JPanel {
+public class TwitterListPanel extends JPanel implements MouseListener{
 
 	private static final long serialVersionUID = 4558427651243865198L;
 	private TwitterFrame tf;
@@ -99,7 +108,9 @@ public class TwitterListPanel extends JPanel {
 		// -- -- -- -- -- -- -- -- -- -- -- -- --
 
 		listTimeline = new JList<CellData>(listModel);
-		listTimeline.setCellRenderer(new TimelineCellRenderer());
+		TimelineCellRenderer tlc =  new TimelineCellRenderer();
+		listTimeline.setCellRenderer(tlc);
+		listTimeline.addMouseListener(this);
 		listTimeline.setVisibleRowCount(9);
 		pane = new JScrollPane(listTimeline);
 
@@ -107,6 +118,68 @@ public class TwitterListPanel extends JPanel {
 		revalidate();
 
 		tf.repaint();
+	}
+
+
+	public List<String> getUrl(String text) {
+		List<String> listUrl = new ArrayList<String>();
+		String[] parts = text.split("\\s+");
+		for (String item : parts) {
+			try {
+				URL url = new URL(item);
+				listUrl.add(url.toString());
+			} catch (MalformedURLException e) {
+				//l'item n'est pas une url
+			}
+		}
+		return listUrl;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if (e.getClickCount() == 2) {
+			CellData selectedCell = (CellData) listTimeline.getSelectedValue();
+			String textContenantLiens = selectedCell.getStatus();
+			List<String> listUrl = getUrl(textContenantLiens);
+			String[] possibilities = listUrl
+					.toArray(new String[listUrl.size()]);
+			;
+			String urlChoisi = (String) JOptionPane.showInputDialog(this,
+					"Quels liens souhaitez vous visiter ?", "Accès aux liens",
+					JOptionPane.PLAIN_MESSAGE, null, possibilities, "ham");
+			if ((urlChoisi != null) && (urlChoisi.length() > 0)) {
+				try {
+					Desktop.getDesktop().browse(URI.create(urlChoisi));
+				} catch (IOException e1) {
+
+				}
+				return;
+			}
+		}		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
