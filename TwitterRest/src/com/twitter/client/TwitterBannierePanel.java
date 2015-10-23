@@ -17,54 +17,54 @@ import javax.swing.JPanel;
 
 import com.twitter.services.TwitterApplication;
 
-public class TwitterHeaderPanel extends JPanel implements MouseListener {
+public class TwitterBannierePanel extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 4855570765891966882L;
 
-	public static final int MIN_WIDTH_HEIGHT = 70;
+	public static final int MIN_WIDTH_HEIGHT = 230;
 	private TwitterFrame tf;
 
-	private JLabel lbUser = new JLabel("User Picture");
-	private JLabel lbNbTweets;
-	private JLabel lbNbAbonnements;
-	private JLabel lbPseudo;
-	private JLabel lbNbFriends;
+	private JLabel lbBanniere;
 
-	public TwitterHeaderPanel(TwitterFrame tf) {
-		
+	public TwitterBannierePanel(TwitterFrame tf) {
 		this.tf = tf;
-		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH, MIN_WIDTH_HEIGHT));
+		setPreferredSize(new Dimension(TwitterFrame.FRAME_WIDTH,
+				MIN_WIDTH_HEIGHT));
+		initBanner();
 		initdata();
+	}
+
+	private void initBanner() {
+
+		lbBanniere = new JLabel();
+		Image img = TwitterApplication.getInstance().getMyBanniere().getImage();
+		ImageIcon icon = new ImageIcon(scaledImage(img,
+				TwitterFrame.FRAME_WIDTH, MIN_WIDTH_HEIGHT));
+		lbBanniere.setIcon(icon);
 	}
 
 	/**
 	 * Initialise les data
 	 */
 	public void initdata() {
-		removeAll();
-		lbUser = new JLabel(TwitterApplication.getInstance().getMyImage());
+
 		addMouseListener(this);
 		setLayout(new GridBagLayout());
-		lbUser.setMinimumSize(new Dimension(MIN_WIDTH_HEIGHT, MIN_WIDTH_HEIGHT));
-
-		lbNbTweets = new JLabel("Tweets : "
-				+ TwitterApplication.getInstance().getNbTweet());
-
-		lbNbAbonnements = new JLabel("Abonnements : "
-				+ TwitterApplication.getInstance().getNbAbonnement());
-
-		lbPseudo = new JLabel(TwitterApplication.getInstance().getMyPseudo());
-
-		lbNbFriends = new JLabel("Nombre d'amis : "
-				+ TwitterApplication.getInstance().getNbFriends());
-
-		add(lbUser);
-		add(lbNbTweets);
-		add(lbNbAbonnements);
-		add(lbPseudo);
-		add(lbNbFriends);
-		
+		add(lbBanniere, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,
+						0, 15, 0), 0, 0));	
 		revalidate();
+	}
+
+	private Image scaledImage(Image img, int w, int h) {
+		BufferedImage resizedImage = new BufferedImage(w, h,
+				BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2 = resizedImage.createGraphics();
+		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+		g2.drawImage(img, 0, 0, w, h, null);
+		g2.dispose();
+		return resizedImage;
 	}
 
 	@Override
