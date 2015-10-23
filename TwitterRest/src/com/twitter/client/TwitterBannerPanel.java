@@ -1,15 +1,10 @@
 package com.twitter.client;
 
 import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.FlowLayout;
 import java.awt.Image;
-import java.awt.Insets;
-import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -38,7 +33,7 @@ public class TwitterBannerPanel extends JPanel implements MouseListener {
 
 		lbBanniere = new JLabel();
 		Image img = TwitterApplication.getInstance().getMyBanniere().getImage();
-		ImageIcon icon = new ImageIcon(scaledImage(img, TwitterFrame.FRAME_WIDTH, MIN_WIDTH_HEIGHT));
+		ImageIcon icon = new ImageIcon(img);
 		lbBanniere.setIcon(icon);
 	}
 
@@ -48,20 +43,9 @@ public class TwitterBannerPanel extends JPanel implements MouseListener {
 	public void initdata() {
 
 		addMouseListener(this);
-		setLayout(new GridBagLayout());
-		add(lbBanniere, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 15, 0), 0, 0));	
+		setLayout(new FlowLayout());
+		add(lbBanniere);
 		revalidate();
-	}
-
-	private Image scaledImage(Image img, int w, int h) {
-		BufferedImage resizedImage = new BufferedImage(w, h,
-				BufferedImage.TYPE_INT_RGB);
-		Graphics2D g2 = resizedImage.createGraphics();
-		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g2.drawImage(img, 0, 0, w, h, null);
-		g2.dispose();
-		return resizedImage;
 	}
 
 	@Override
