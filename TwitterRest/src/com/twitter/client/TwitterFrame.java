@@ -4,13 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import com.twitter.services.TwitterApplication;
 
 public class TwitterFrame extends JFrame {
 
 	private static final long serialVersionUID = -7470915094971302312L;
-	public static final int FRAME_WIDTH = 1300;
+	public static final int FRAME_WIDTH = 850;
 	public static final int FRAME_HEIGHT = 800;
 	private TwitterListPanel tlp;
 	private TwitterStatusPanel tsp;
@@ -33,6 +34,7 @@ public class TwitterFrame extends JFrame {
 
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		initTwitterPanels();
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 	}
 

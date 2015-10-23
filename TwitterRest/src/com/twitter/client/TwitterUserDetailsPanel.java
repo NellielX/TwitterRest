@@ -1,6 +1,5 @@
 package com.twitter.client;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -20,7 +19,7 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 	public static final int MIN_WIDTH_HEIGHT = 60;
 	private TwitterFrame tf;
 
-	private JLabel lbUser = new JLabel("User Picture");
+	private JLabel lbUser;
 	private JLabel lbNbTweets;
 	private JLabel lbNbAbonnements;
 	private JLabel lbPseudo;
@@ -61,16 +60,16 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 100, 15, 0), 0, 0));	
 		
 		add(lbNbTweets, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 400, 10, 0), 0, 0));	
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 200, 5, 0), 0, 0));	
 		
 		add(lbNbAbonnements, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 600, 10, 0), 0, 0));	
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 300, 5, 0), 0, 0));	
 		
 		add(lbPseudo, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 800, 10, 0), 0, 0));	
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 450, 5, 0), 0, 0));	
 		
 		add(lbNbFriends, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 1000, 10, 0), 0, 0));	
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 550, 5, 0), 0, 0));	
 
 		revalidate();
 	}

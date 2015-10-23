@@ -25,9 +25,11 @@ public class TimelineCellRenderer extends JLabel implements
 
 	@Override
 	public Component getListCellRendererComponent(
-			JList<? extends CellData> list, CellData value,
-			int index, boolean isSelected, boolean cellHasFocus) {
-		setText(value.getStatus());
+			JList<? extends CellData> list, CellData value, int index,
+			boolean isSelected, boolean cellHasFocus) {
+		String labelText = String.format("<html><div WIDTH=%d>%s</div><html>",
+				500, value.getStatus());
+		setText(labelText);
 		URL url = null;
 		try {
 			url = new URL(value.getProfileImage());
