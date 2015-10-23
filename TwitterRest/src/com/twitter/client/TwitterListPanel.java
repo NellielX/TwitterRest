@@ -26,6 +26,7 @@ public class TwitterListPanel extends JPanel {
 
 	/**
 	 * Liste des tweets
+	 * 
 	 * @param tf
 	 */
 	public TwitterListPanel(TwitterFrame tf) {
@@ -33,6 +34,7 @@ public class TwitterListPanel extends JPanel {
 		setPreferredSize(new Dimension(800, 550));
 		nameOfshownStatus = null;
 		updateJlist(null);
+		launchRefreshThread();
 	}
 
 	/**
@@ -46,7 +48,8 @@ public class TwitterListPanel extends JPanel {
 						while (true) {
 							try {
 								Thread.sleep(60000);
-								System.out.println("Mise à jour automatique de la timelme");
+								System.out
+										.println("Mise à jour automatique de la timelme");
 								updateJlist(nameOfshownStatus);
 							} catch (InterruptedException v) {
 								System.out.println(v);
@@ -63,6 +66,7 @@ public class TwitterListPanel extends JPanel {
 
 	/**
 	 * Upadte de la liste des tweets
+	 * 
 	 * @param userName
 	 */
 	public void updateJlist(String userName) {

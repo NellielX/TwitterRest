@@ -27,8 +27,18 @@ public class TimelineCellRenderer extends JLabel implements
 	public Component getListCellRendererComponent(
 			JList<? extends CellData> list, CellData value, int index,
 			boolean isSelected, boolean cellHasFocus) {
+		String[] parts = value.getStatus().split("\\s+");
+		StringBuilder finalString = new StringBuilder();
+		for (String item : parts) {
+			try {
+				URL url = new URL(item);
+				finalString.append("<a href=\"" + url + "\">" + url + "</a> ");
+			} catch (MalformedURLException e) {
+				finalString.append(item + "  ");
+			}
+		}
 		String labelText = String.format("<html><div WIDTH=%d>%s</div><html>",
-				500, value.getStatus());
+				500, finalString);
 		setText(labelText);
 		URL url = null;
 		try {
