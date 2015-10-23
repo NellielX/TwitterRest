@@ -59,14 +59,14 @@ public class TwitterUserDetailsPanel extends JPanel implements MouseListener {
 		add(lbUser, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 100, 15, 0), 0, 0));	
 		
-		add(lbNbTweets, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+		add(lbPseudo, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 200, 5, 0), 0, 0));	
 		
-		add(lbNbAbonnements, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+		add(lbNbTweets, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 300, 5, 0), 0, 0));	
 		
-		add(lbPseudo, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
-				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 450, 5, 0), 0, 0));	
+		add(lbNbAbonnements, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
+				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 400, 5, 0), 0, 0));	
 		
 		add(lbNbFriends, new GridBagConstraints(1, 1, 1, 1, 2.0, 2.0,
 				GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 550, 5, 0), 0, 0));	
